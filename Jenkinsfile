@@ -28,13 +28,18 @@ pipeline {
                     reuseNode true
                 }
             }
-            
+
             steps {
                 sh '''
                 test -f build/index.html
                 npm test
                 '''
             }
+        }
+    }
+    post {
+        awlways {
+            junit 'jest-results/junit.xml'
         }
     }
 }
