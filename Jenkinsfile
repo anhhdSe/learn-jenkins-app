@@ -37,8 +37,9 @@ pipeline {
             }
         }
     }
+
     post {
-        awlways {
+        always {
             junit 'jest-results/junit.xml'
         }
     }
